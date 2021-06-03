@@ -3,8 +3,11 @@
 body {
   display: flex;
   flex-direction: column;
-  font-family: Arial;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   min-height: 100vh;
+  background-color: #f1f1f1;
+  color: #222;
+  text-align: center;
 }
 
 header {
@@ -21,6 +24,7 @@ footer {
 }
 
 /* -------------------  TABLET  --------------------- */
+
 @media (min-width: 768px) {
   /* use mobile */
 }
