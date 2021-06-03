@@ -13,17 +13,23 @@ app.use(bodyParser.json())
 
 app.use('/', express.static(path.join(__dirname, '../public')))
 
-// your API calls
-
-// example API call
-app.get('/apod', async (req, res) => {
+/**
+ * Get image data gathered by NASA's rovers 
+ * @req : JSON object containes 'rover_name' and 'page' {optional} 
+ * @res : JSOn object containes 25 pictures of the given rover
+ */
+app.get('/rover', async (req, res) => {
     try {
-        let image = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}`)
+        console.log(req.body);
+        const rover_name = req.body.rover_name;
+        const page = req.body.page || 1;
+        const rover_info = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover_name}/photos?sol=1000&page=${page}&api_key=${process.env.API_KEY}`)
             .then(res => res.json())
-        res.send({ image })
+        res.send({ rover_info })
     } catch (err) {
         console.log('error:', err);
     }
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
