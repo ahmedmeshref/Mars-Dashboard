@@ -18,7 +18,7 @@ app.use('/', express.static(path.join(__dirname, '../public')))
  * @req : JSON object containes 'rover_name' and 'page' {optional} 
  * @res : JSOn object containes 25 pictures of the given rover
  */
-app.get('/rover', async (req, res) => {
+app.post('/rover', async (req, res) => {
     try {
         console.log(req.body);
         const rover_name = req.body.rover_name.toLowerCase();
