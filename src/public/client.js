@@ -1,6 +1,4 @@
-let store = {
-    user: { name: "Student" },
-    apod: '',
+const store = {
     rovers: ['Curiosity', 'Opportunity', 'Spirit'],
 }
 
@@ -93,7 +91,7 @@ const ImageOfTheDay = (apod) => {
 
 // ------------------------------------------------------  API CALLS
 
-// Example API call
+// Get Rover Images API call
 const getImageOfTheDay = (state) => {
     let { apod } = state
 
@@ -103,12 +101,6 @@ const getImageOfTheDay = (state) => {
 
     return data
 }
-
-
-
-
-
-// Get Rover Images API call
 
 
 // Populate the dom with 
