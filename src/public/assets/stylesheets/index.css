@@ -17,7 +17,7 @@ header {
   font-weight: bold;
   background-color: #222;
   color: #f1f1f1;
-  box-shadow: 0 2px 2px 2px #222
+  box-shadow: 0 2px 2px 2px #222;
 }
 
 main {
@@ -30,6 +30,7 @@ main {
   justify-content: space-around;
   text-align: center;
   position: sticky;
+  margin-bottom: 40px;
 }
 
 .btn {
@@ -52,9 +53,24 @@ main {
   color: #f1f1f1;
 }
 
-/* .btn:active {
-  background: palevioletred;
-} */
+.rover_lst {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rover_lst li {
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.rover_img {
+  max-width: 50%;
+  height: auto;
+}
+
+
+
 
 footer {
   /* footer styles */
